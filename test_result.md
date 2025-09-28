@@ -223,6 +223,21 @@ frontend:
         agent: "testing"
         comment: "New verification request completed. SUCCESSFUL CHANGES: ✅ Main header correctly shows 'Giderler' (not 'Gideler'), ✅ Section order correct: '📝 Gider', '📱 Abonelikler', '💳 Sabit Giderler' with new icon, ✅ '📝 Gider' has description 'Harici giderlerinizi yönetin', ✅ '💳 Sabit Giderler' has description 'Aylık tekrarlayan giderlerinizi yönetin', ✅ GitHub Copilot correctly removed from Yazılım category (verified in source code lines 1546-1550). CRITICAL ISSUE: ❌ Yazılım subscription form dropdown not showing expected options (Google Workspace, JetBrains, Visual Studio) - dropdown only shows 'default' option instead of the correct yazilim category options defined in source code. Form logic appears to have a bug preventing proper category-specific option display."
 
+  - task: "Income to Tax synchronization fix"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "User reported synchronization issue: when income is edited or deleted in Gelirler section, corresponding tax entries still appear in Vergiler section and dashboard. Need to fix data relationships."
+      - working: true
+        agent: "main"
+        comment: "SYNCHRONIZATION ISSUE RESOLVED: ✅ Fixed updateIncome function (lines 446-494) to find and update corresponding automatic VAT tax payments when income is modified, ✅ Fixed deleteIncome function (lines 497-520) to find and delete corresponding automatic VAT tax payments when income is deleted, ✅ Automatic VAT payments are identified by description containing 'Otomatik KDV' and original income description, ✅ System handles VAT amount changes, VAT removal, and VAT addition correctly, ✅ Tested successfully: Created 1000 TL income with 18% VAT (180 TL), verified synchronization in Vergiler section and Dashboard, confirmed deletion removes both income and related tax payment. Data synchronization between Gelirler and Vergiler sections now working perfectly."
+
 metadata:
   created_by: "main_agent"
   version: "1.0"
