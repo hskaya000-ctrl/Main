@@ -3215,6 +3215,7 @@ const App = () => {
               <h3 className="text-lg font-semibold mb-4">Vergi Ödemeleri</h3>
               <div className="grid gap-4">
                 {filterDataByPeriod(taxPayments, 'payment_date', taxesFilter)
+                  .filter(payment => !payment.description || !payment.description.includes('Otomatik KDV'))
                   .sort((a, b) => new Date(b.payment_date) - new Date(a.payment_date))
                   .map(payment => (
                   <div key={payment.id} className={`p-6 rounded-lg border transition-colors duration-200 ${
