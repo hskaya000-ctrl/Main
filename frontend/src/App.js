@@ -2671,7 +2671,9 @@ const App = () => {
         {activeTab === 'income' && (
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-              <h2 className="text-2xl font-bold">Gelirler</h2>
+              <h2 className={`text-2xl font-bold transition-colors duration-200 ${
+                darkMode ? 'text-green-400' : 'text-green-600'
+              }`}>Gelirler</h2>
               <div className="flex flex-wrap items-center gap-3">
                 {/* Dönem Filtresi */}
                 <PeriodFilter 
