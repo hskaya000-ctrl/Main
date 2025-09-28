@@ -3287,7 +3287,7 @@ const App = () => {
               }`}>Ajanda</h2>
               <StandardButton
                 onClick={() => setShowForm('agenda')}
-                variant="primary"
+                variant="info"
                 className="h-10"
               >
                 Not Ekle
