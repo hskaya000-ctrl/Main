@@ -994,7 +994,7 @@ const App = () => {
     return (
       <form onSubmit={handleSubmit} className="space-y-4">
         <h3 className="text-lg font-semibold mb-4">
-          {income ? 'Gelir Düzenle' : 'Yeni Gelir Ekle'}
+          {income ? 'Gelir Düzenle' : 'Gelir Ekle'}
         </h3>
         
         {/* Tarih - En üstte */}
