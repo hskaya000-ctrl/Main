@@ -450,6 +450,7 @@ const App = () => {
     setIncomes(updatedIncomes);
     saveToStorage('incomes', updatedIncomes);
     setEditItem(null);
+    setShowForm(null);
   };
 
   // Gelir silme
