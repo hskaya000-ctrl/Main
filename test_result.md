@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Freelancer finans takip aracı - gelir, gider, vergi ödemelerini takip etme, proje yönetimi, offline çalışma, dashboard ile özet görünüm ve grafikler"
+user_problem_statement: "Gelirler ve Vergiler bölümü arasında senkronizasyon sorunu düzeltilmesi: Gelir düzenlendiğinde veya silindiğinde, vergiler bölümünde de güncellenmeli/silinmeli"
 
 backend:
   - task: "FastAPI server setup with Turkish models"
