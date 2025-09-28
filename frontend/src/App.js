@@ -3210,17 +3210,17 @@ const App = () => {
                 return (
                   <div 
                     key={`vat-section-${vatIncomes.length}-${vatIncomes.map(i => i.id).join('-')}`}
-                    className={`p-6 rounded-lg border transition-colors duration-200 ${
+                    className={`p-4 rounded-lg border transition-colors duration-200 ${
                       darkMode 
                         ? 'bg-blue-900/20 border-blue-700' 
                         : 'bg-blue-50 border-blue-200'
                     }`}>
-                    <h3 className={`text-lg font-semibold mb-4 transition-colors duration-200 ${
+                    <h3 className={`text-base font-semibold mb-3 transition-colors duration-200 ${
                       darkMode ? 'text-blue-300' : 'text-blue-800'
                     }`}>KDV (Gelir)</h3>
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       {vatIncomes.map(income => (
-                        <div key={income.id} className={`p-4 rounded border transition-colors duration-200 ${
+                        <div key={income.id} className={`p-3 rounded border transition-colors duration-200 ${
                           darkMode 
                             ? 'bg-violet-800/20 border-violet-600' 
                             : 'bg-white border-violet-200'
