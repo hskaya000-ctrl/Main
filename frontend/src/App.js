@@ -3206,7 +3206,7 @@ const App = () => {
             </div>
             
             {/* KDV Bilgileri - Gelirlerden - Altta */}
-            {useMemo(() => {
+            {(() => {
               const filteredIncomes = filterDataByPeriod(incomes, 'income_date', taxesFilter);
               const vatIncomes = filteredIncomes.filter(income => income.tax_amount && income.tax_amount > 0);
               
