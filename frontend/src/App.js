@@ -3120,7 +3120,7 @@ const App = () => {
                   variant="warning"
                   className="h-10"
                 >
-                  Yeni Ödeme
+                  Ödeme Ekle
                 </StandardButton>
               </div>
             </div>
