@@ -3309,7 +3309,7 @@ const App = () => {
                 }`}>
                   <div className="text-6xl mb-4">📅</div>
                   <p className="text-xl font-medium mb-2">Henüz ajanda notu yok</p>
-                  <p>İlk ajanda notunuzu eklemek için "Yeni Not" butonuna tıklayın</p>
+                  <p>İlk ajanda notunuzu eklemek için "Not Ekle" butonuna tıklayın</p>
                 </div>
               ) : (
                 agenda
