@@ -2801,7 +2801,7 @@ const App = () => {
                     variant="danger"
                     className="h-10"
                   >
-                    Yeni Gider
+                    Gider Ekle
                   </StandardButton>
                 </div>
               </div>
