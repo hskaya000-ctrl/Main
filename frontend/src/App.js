@@ -3288,7 +3288,7 @@ const App = () => {
                 );
               }
               return null;
-            }, [incomes, taxesFilter, darkMode])()}
+            }, [incomes, taxesFilter, darkMode])}
           </div>
         )}
         
