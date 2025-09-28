@@ -1160,7 +1160,7 @@ const App = () => {
     return (
       <form onSubmit={handleSubmit} className="space-y-4">
         <h3 className="text-lg font-semibold mb-4">
-          {expense ? 'Gider Düzenle' : 'Yeni Gider Ekle'}
+          {expense ? 'Gider Düzenle' : 'Gider Ekle'}
         </h3>
         
         {/* Tarih - En üstte */}
