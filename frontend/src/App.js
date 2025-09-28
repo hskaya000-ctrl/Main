@@ -3283,7 +3283,7 @@ const App = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className={`text-2xl font-bold transition-colors duration-200 ${
-                darkMode ? 'text-white' : 'text-gray-900'
+                darkMode ? 'text-blue-400' : 'text-blue-600'
               }`}>Ajanda</h2>
               <StandardButton
                 onClick={() => setShowForm('agenda')}
