@@ -2684,7 +2684,7 @@ const App = () => {
                   variant="success"
                   className="h-10"
                 >
-                  Yeni Gelir
+                  Gelir Ekle
                 </StandardButton>
               </div>
             </div>
