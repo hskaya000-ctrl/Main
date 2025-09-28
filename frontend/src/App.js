@@ -1384,7 +1384,7 @@ const App = () => {
         <h3 className={`text-lg font-semibold mb-4 transition-colors duration-200 ${
           darkMode ? 'text-white' : 'text-gray-900'
         }`}>
-          {agendaItem ? 'Ajanda Notu Düzenle' : 'Yeni Ajanda Notu Ekle'}
+          {agendaItem ? 'Ajanda Notu Düzenle' : 'Not Ekle'}
         </h3>
         
         {/* Tarih - En üstte */}
