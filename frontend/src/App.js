@@ -2789,7 +2789,9 @@ const App = () => {
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                  <h2 className="text-2xl font-bold">Giderler</h2>
+                  <h2 className={`text-2xl font-bold transition-colors duration-200 ${
+                    darkMode ? 'text-red-400' : 'text-red-600'
+                  }`}>Giderler</h2>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
                   {/* Dönem Filtresi */}
