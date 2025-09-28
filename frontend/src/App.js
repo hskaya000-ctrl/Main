@@ -1744,7 +1744,13 @@ const App = () => {
         : "bg-green-600 hover:bg-green-700 text-white focus:ring-green-500",
       danger: darkMode
         ? "bg-red-700 hover:bg-red-600 text-white focus:ring-red-500"
-        : "bg-red-600 hover:bg-red-700 text-white focus:ring-red-500"
+        : "bg-red-600 hover:bg-red-700 text-white focus:ring-red-500",
+      warning: darkMode
+        ? "bg-orange-700 hover:bg-orange-600 text-white focus:ring-orange-500"
+        : "bg-orange-600 hover:bg-orange-700 text-white focus:ring-orange-500",
+      info: darkMode
+        ? "bg-blue-700 hover:bg-blue-600 text-white focus:ring-blue-500"
+        : "bg-blue-500 hover:bg-blue-600 text-white focus:ring-blue-500"
     };
     
     return (
