@@ -873,7 +873,7 @@ const App = () => {
     return (
       <form onSubmit={handleSubmit} className="space-y-4">
         <h3 className="text-lg font-semibold mb-4">
-          {project ? 'Proje Düzenle' : 'Yeni Proje Ekle'}
+          {project ? 'Proje Düzenle' : 'Proje Ekle'}
         </h3>
         
         {/* Tarih - En üstte */}
