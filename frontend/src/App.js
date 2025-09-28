@@ -3284,7 +3284,7 @@ const App = () => {
                 variant="primary"
                 className="h-10"
               >
-                📅 Yeni Not
+                Not Ekle
               </StandardButton>
             </div>
             
