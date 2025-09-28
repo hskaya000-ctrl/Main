@@ -3225,10 +3225,10 @@ const App = () => {
                             ? 'bg-violet-800/20 border-violet-600' 
                             : 'bg-white border-violet-200'
                         }`}>
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <div className="flex items-center gap-2 mb-2">
-                                <span className={`text-xs px-2 py-1 rounded-full transition-colors duration-200 ${
+                          <div className="flex justify-between items-center">
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className={`text-xs px-2 py-0.5 rounded-full transition-colors duration-200 ${
                                   darkMode 
                                     ? 'bg-violet-700 text-violet-200' 
                                     : 'bg-violet-100 text-violet-700'
@@ -3236,32 +3236,32 @@ const App = () => {
                                   📅 {income.income_date}
                                 </span>
                               </div>
-                              <p className={`font-semibold transition-colors duration-200 ${
+                              <p className={`text-sm font-semibold transition-colors duration-200 ${
                                 darkMode ? 'text-violet-200' : 'text-violet-800'
                               }`}>
                                 {income.brand || 'Belirsiz Marka'}
                               </p>
-                              <p className={`text-sm transition-colors duration-200 ${
+                              <p className={`text-xs transition-colors duration-200 ${
                                 darkMode ? 'text-violet-300' : 'text-violet-600'
                               }`}>
                                 {income.description}
                               </p>
                             </div>
-                            <div className="text-right">
-                              <p className={`text-lg font-bold transition-colors duration-200 ${
+                            <div className="text-right ml-4">
+                              <p className={`text-base font-bold transition-colors duration-200 ${
                                 darkMode ? 'text-violet-300' : 'text-violet-700'
                               }`}>
-                                ₺{income.tax_amount.toLocaleString('tr-TR')} KDV
+                                ₺{income.tax_amount.toLocaleString('tr-TR')}
                               </p>
-                              <p className={`text-sm transition-colors duration-200 ${
+                              <p className={`text-xs transition-colors duration-200 ${
                                 darkMode ? 'text-violet-400' : 'text-violet-600'
                               }`}>
-                                %{((income.vat_rate || 0.18) * 100).toFixed(0)} oran
+                                %{((income.vat_rate || 0.18) * 100).toFixed(0)} KDV
                               </p>
                               <p className={`text-xs transition-colors duration-200 ${
                                 darkMode ? 'text-violet-500' : 'text-violet-500'
                               }`}>
-                                Ana Tutar: ₺{income.amount.toLocaleString('tr-TR')}
+                                (₺{income.amount.toLocaleString('tr-TR')})
                               </p>
                             </div>
                           </div>
