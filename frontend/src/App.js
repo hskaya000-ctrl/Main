@@ -2822,7 +2822,7 @@ const App = () => {
                 <div className="flex justify-between items-center">
                   <div>
                     <h3 className={`text-lg font-semibold transition-colors duration-200 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                      📝 Gider
+                      💰 Gider
                     </h3>
                     <p className={`text-sm mt-1 transition-colors duration-200 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                       Harici giderlerinizi yönetin
