@@ -3012,7 +3012,7 @@ const App = () => {
               <div className="space-y-6 mt-8 pt-8 border-t border-dashed">
                 <div>
                   <h3 className={`text-lg font-semibold transition-colors duration-200 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                    💳 Sabit Giderler
+                    🏠 Sabit Giderler
                   </h3>
                   <p className={`text-sm mt-1 transition-colors duration-200 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                     Aylık tekrarlayan giderlerinizi yönetin
