@@ -444,11 +444,64 @@ const App = () => {
 
   // Gelir güncelleme
   const updateIncome = (updatedIncome) => {
+    const originalIncome = incomes.find(i => i.id === updatedIncome.id);
+    
     const updatedIncomes = incomes.map(i => 
       i.id === updatedIncome.id ? updatedIncome : i
     );
     setIncomes(updatedIncomes);
     saveToStorage('incomes', updatedIncomes);
+    
+    // İlgili otomatik KDV ödeme kaydını güncelle
+    if (originalIncome) {
+      // Eski otomatik KDV kaydını bul ve güncelle/sil
+      const updatedTaxPayments = taxPayments.map(payment => {
+        // Otomatik KDV kayıtlarını tanımla (description'da "Otomatik KDV" geçen ve income description'ı ile eşleşen)
+        const isAutoVatPayment = payment.description && 
+                                payment.description.includes('Otomatik KDV') &&
+                                payment.description.includes(originalIncome.description) &&
+                                payment.type === 'KDV';
+        
+        if (isAutoVatPayment) {
+          // Yeni income'da KDV varsa güncelle
+          if (updatedIncome.tax_amount && updatedIncome.tax_amount > 0) {
+            return {
+              ...payment,
+              amount: updatedIncome.tax_amount,
+              payment_date: updatedIncome.income_date,
+              description: `${updatedIncome.description} - Otomatik KDV`
+            };
+          } else {
+            // Yeni income'da KDV yoksa bu kaydı silmek için null döndür
+            return null;
+          }
+        }
+        return payment;
+      }).filter(payment => payment !== null); // null kayıtları filtrele
+      
+      // Eğer yeni income'da KDV var ama önceden otomatik KDV kaydı yoksa, yeni kayıt oluştur
+      const hasAutoVatPayment = taxPayments.some(payment => 
+        payment.description && 
+        payment.description.includes('Otomatik KDV') &&
+        payment.description.includes(originalIncome.description) &&
+        payment.type === 'KDV'
+      );
+      
+      if (updatedIncome.tax_amount && updatedIncome.tax_amount > 0 && !hasAutoVatPayment) {
+        const newVatPayment = {
+          id: `vat_${Date.now()}`,
+          amount: updatedIncome.tax_amount,
+          type: 'KDV',
+          payment_date: updatedIncome.income_date,
+          description: `${updatedIncome.description} - Otomatik KDV`
+        };
+        updatedTaxPayments.push(newVatPayment);
+      }
+      
+      setTaxPayments(updatedTaxPayments);
+      saveToStorage('taxPayments', updatedTaxPayments);
+    }
+    
     setEditItem(null);
     setShowForm(null);
   };
