@@ -3111,7 +3111,7 @@ const App = () => {
                 />
                 <StandardButton
                   onClick={() => setShowForm('tax')}
-                  variant="primary"
+                  variant="warning"
                   className="h-10"
                 >
                   Yeni Ödeme
