@@ -3267,14 +3267,14 @@ const App = () => {
                           </div>
                         </div>
                       ))}
-                      <div className="border-t pt-3 mt-3">
-                        <div className={`flex justify-between items-center p-3 rounded transition-colors duration-200 ${
+                      <div className="border-t pt-2 mt-2">
+                        <div className={`flex justify-between items-center p-2 rounded transition-colors duration-200 ${
                           darkMode 
                             ? 'bg-blue-800/30 text-blue-200' 
                             : 'bg-blue-100 text-blue-800'
                         }`}>
-                          <span className="font-semibold">Toplam Oluşan KDV:</span>
-                          <span className="text-xl font-bold">
+                          <span className="text-sm font-semibold">Toplam KDV:</span>
+                          <span className="text-lg font-bold">
                             ₺{vatIncomes.reduce((sum, income) => sum + (income.tax_amount || 0), 0).toLocaleString('tr-TR')}
                           </span>
                         </div>
