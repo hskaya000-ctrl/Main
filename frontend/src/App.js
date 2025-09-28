@@ -509,9 +509,26 @@ const App = () => {
   // Gelir silme
   const deleteIncome = (incomeId) => {
     if (window.confirm('Bu geliri silmek istediğinizden emin misiniz?')) {
+      const incomeToDelete = incomes.find(i => i.id === incomeId);
+      
       const updatedIncomes = incomes.filter(i => i.id !== incomeId);
       setIncomes(updatedIncomes);
       saveToStorage('incomes', updatedIncomes);
+      
+      // İlgili otomatik KDV ödeme kaydını sil
+      if (incomeToDelete) {
+        const updatedTaxPayments = taxPayments.filter(payment => {
+          // Otomatik KDV kayıtlarını tanımla ve sil
+          const isAutoVatPayment = payment.description && 
+                                  payment.description.includes('Otomatik KDV') &&
+                                  payment.description.includes(incomeToDelete.description) &&
+                                  payment.type === 'KDV';
+          return !isAutoVatPayment; // Otomatik KDV kayıtlarını hariç tut
+        });
+        
+        setTaxPayments(updatedTaxPayments);
+        saveToStorage('taxPayments', updatedTaxPayments);
+      }
       
       // Form'u kapatmak için
       setEditItem(null);
