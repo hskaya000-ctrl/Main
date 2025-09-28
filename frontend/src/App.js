@@ -459,6 +459,10 @@ const App = () => {
       const updatedIncomes = incomes.filter(i => i.id !== incomeId);
       setIncomes(updatedIncomes);
       saveToStorage('incomes', updatedIncomes);
+      
+      // Form'u kapatmak için
+      setEditItem(null);
+      setShowForm(null);
     }
   };
 
