@@ -3099,7 +3099,9 @@ const App = () => {
         {activeTab === 'taxes' && (
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-              <h2 className="text-2xl font-bold">Vergi Yönetimi</h2>
+              <h2 className={`text-2xl font-bold transition-colors duration-200 ${
+                darkMode ? 'text-orange-400' : 'text-orange-600'
+              }`}>Vergi Yönetimi</h2>
               <div className="flex flex-wrap items-center gap-3">
                 {/* Dönem Filtresi */}
                 <PeriodFilter 
