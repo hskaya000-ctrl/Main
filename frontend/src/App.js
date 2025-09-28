@@ -2557,7 +2557,7 @@ const App = () => {
                   variant="primary"
                   className="h-10"
                 >
-                  Yeni Proje
+                  Proje Ekle
                 </StandardButton>
               </div>
             </div>
